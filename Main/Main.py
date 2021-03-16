@@ -3,7 +3,7 @@ import pygame
 pygame.init()
 
 #SIEMA WPROWADZAM ZMIANY ZEBY ZEPSUC CAlY PROJEKT
-
+#TEST DRUGI
 
 white = (255, 255, 255)
 black = (0, 0, 0)
