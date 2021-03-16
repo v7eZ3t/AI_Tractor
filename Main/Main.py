@@ -1,27 +1,21 @@
 import pygame
-
+import constants as const
 #wersja 1.01
+from Main.constants import *
 
 pygame.init()
 
-white = (255, 255, 255)
-black = (0, 0, 0)
-red = (255, 0, 0)
-
-display_size_horizontal = 600
-display_size_vertical = 600
 # display size in pixels
-display = pygame.display.set_mode((display_size_horizontal, display_size_vertical))
+display = pygame.display.set_mode((DISPLAY_SIZE_HORIZONTAL, DISPLAY_SIZE_VERTICAL))
 # program name
 pygame.display.set_caption('Tryryryry')
 
 game_over = False
 
-tractor_horizontal_location = 500
-tractor_vertical_location = 300
+tractor_horizontal_location = TRACTOR_HORIZONTAL_LOCATION
+tractor_vertical_location = TRACTOR_VERTICAL_LOCATION
 
-tractor_width = 100
-tractor_height = 100
+
 
 horizontal_change = 0
 vertical_change = 0
@@ -34,28 +28,28 @@ while not game_over:
             game_over = True
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT and tractor_horizontal_location > 0:
-                horizontal_change = -tractor_width
+                horizontal_change = -TRACTOR_WIDTH
                 vertical_change = 0
-            elif event.key == pygame.K_RIGHT and tractor_horizontal_location < display_size_horizontal - tractor_width:
-                horizontal_change = tractor_width
+            elif event.key == pygame.K_RIGHT and tractor_horizontal_location < DISPLAY_SIZE_HORIZONTAL - TRACTOR_WIDTH:
+                horizontal_change = TRACTOR_WIDTH
                 vertical_change = 0
             elif event.key == pygame.K_UP and tractor_vertical_location > 0:
-                vertical_change = -tractor_height
+                vertical_change = -TRACTOR_HEIGHT
                 horizontal_change = 0
-            elif event.key == pygame.K_DOWN and tractor_vertical_location < display_size_vertical - tractor_height:
-                vertical_change = tractor_height
+            elif event.key == pygame.K_DOWN and tractor_vertical_location < DISPLAY_SIZE_VERTICAL - TRACTOR_HEIGHT:
+                vertical_change = TRACTOR_HEIGHT
                 horizontal_change = 0
 
     tractor_horizontal_location += horizontal_change
     tractor_vertical_location += vertical_change
-    display.fill(white)
-    pygame.draw.rect(display, black,
-                     [tractor_horizontal_location, tractor_vertical_location, tractor_width, tractor_height])
+    display.fill(WHITE)
+    pygame.draw.rect(display, BLACK,
+                     [tractor_horizontal_location, tractor_vertical_location, TRACTOR_WIDTH, TRACTOR_HEIGHT])
 
     print(tractor_horizontal_location, " ", tractor_vertical_location)
 
     pygame.display.update()
-    clock.tick(10)
+    clock.tick(FPS)
     horizontal_change = 0
     vertical_change = 0
 #commit test 2
