@@ -1,10 +1,8 @@
 import pygame
 
-pygame.init()
+#wersja 1.01
 
-#SIEMA WPROWADZAM ZMIANY ZEBY ZEPSUC CAlY PROJEKT
-#TEST DRUGI
-# TEST TRZECI
+pygame.init()
 
 white = (255, 255, 255)
 black = (0, 0, 0)
@@ -61,7 +59,6 @@ while not game_over:
     horizontal_change = 0
     vertical_change = 0
 #commit test 2
-#sprawdź czy działa
 
 pygame.quit()
 quit()
