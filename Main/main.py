@@ -20,8 +20,9 @@ tractor_vertical_location = TRACTOR_VERTICAL_LOCATION
 horizontal_change = 0
 vertical_change = 0
 
+change_tile = False
 board = Board.generate()
-
+color = BLACK
 clock = pygame.time.Clock()
 
 while not game_over:
@@ -42,12 +43,17 @@ while not game_over:
             elif event.key == pygame.K_DOWN and tractor_vertical_location < DISPLAY_SIZE_VERTICAL - TRACTOR_HEIGHT:
                 vertical_change = TRACTOR_HEIGHT
                 horizontal_change = 0
+            elif event.key == pygame.K_SPACE:
+                change_tile = True
 
     tractor_horizontal_location += horizontal_change
     tractor_vertical_location += vertical_change
     display.fill(WHITE)
     for i in range(int(HORIZONTAL_TILES_NUMBER)):
         for j in range(int(VERTICAL_TILES_NUMBER)):
+            if change_tile and i * TILE_SIZE == tractor_horizontal_location and j * TILE_SIZE == tractor_vertical_location:
+                board[i][j] = 4
+                change_tile = False
             if board[i][j] == 0:
                 color = WHITE
             elif board[i][j] == 1:
@@ -56,6 +62,9 @@ while not game_over:
                 color = YELLOW
             elif board[i][j] == 3:
                 color = GREEN
+            elif board[i][j] == 4:
+                color = BLACK
+
             pygame.draw.rect(display, color,
                              [i * TILE_SIZE, j * TILE_SIZE, TILE_SIZE, TILE_SIZE])
 
