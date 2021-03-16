@@ -43,6 +43,18 @@ while not game_over:
     tractor_horizontal_location += horizontal_change
     tractor_vertical_location += vertical_change
     display.fill(WHITE)
+    for i in range(int(HORIZONTAL_TILES_NUMBER)):
+        for j in range(int(VERTICAL_TILES_NUMBER)):
+            if board[i][j] == 0:
+                color = GREEN
+            elif board[i][j] == 1:
+                color = BLACK
+            elif board[i][j] == 2:
+                color = BLACK
+            elif board[i][j] == 3:
+                color = BLACK
+
+
     pygame.draw.rect(display, BLACK,
                      [tractor_horizontal_location, tractor_vertical_location, TRACTOR_WIDTH, TRACTOR_HEIGHT])
 
