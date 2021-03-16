@@ -1,7 +1,6 @@
 import pygame
-import constants as const
-#wersja 1.01
-from Main.constants import *
+#wersja 1.02
+from constants import *
 
 pygame.init()
 
@@ -15,8 +14,6 @@ game_over = False
 tractor_horizontal_location = TRACTOR_HORIZONTAL_LOCATION
 tractor_vertical_location = TRACTOR_VERTICAL_LOCATION
 
-
-
 horizontal_change = 0
 vertical_change = 0
 
@@ -27,6 +24,7 @@ while not game_over:
         if event.type == pygame.QUIT:
             game_over = True
         if event.type == pygame.KEYDOWN:
+            print(tractor_horizontal_location, " ", tractor_vertical_location)
             if event.key == pygame.K_LEFT and tractor_horizontal_location > 0:
                 horizontal_change = -TRACTOR_WIDTH
                 vertical_change = 0
@@ -46,7 +44,7 @@ while not game_over:
     pygame.draw.rect(display, BLACK,
                      [tractor_horizontal_location, tractor_vertical_location, TRACTOR_WIDTH, TRACTOR_HEIGHT])
 
-    print(tractor_horizontal_location, " ", tractor_vertical_location)
+
 
     pygame.display.update()
     clock.tick(FPS)
