@@ -45,8 +45,14 @@ while not game_over:
     display.fill(WHITE)
     for i in range(int(HORIZONTAL_TILES_NUMBER)):
         for j in range(int(VERTICAL_TILES_NUMBER)):
-            if board[i][j] = 0:
+            if board[i][j] == 0:
                 color = GREEN
+            elif board[i][j] == 1:
+                color = BLACK
+            elif board[i][j] == 2:
+                color = BLACK
+            elif board[i][j] == 3:
+                color = BLACK
 
 
     pygame.draw.rect(display, BLACK,
