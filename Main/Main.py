@@ -60,7 +60,8 @@ while not game_over:
     clock.tick(10)
     horizontal_change = 0
     vertical_change = 0
-#commit test
+#commit test 2
+#sprawdź czy działa
 
 pygame.quit()
 quit()
