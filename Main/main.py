@@ -2,6 +2,7 @@ import pygame
 # wersja 1.02
 from constants import *
 
+from Main import Board
 from Main.constants import *
 
 pygame.init()
@@ -18,6 +19,8 @@ tractor_vertical_location = TRACTOR_VERTICAL_LOCATION
 
 horizontal_change = 0
 vertical_change = 0
+
+board = Board.generate()
 
 clock = pygame.time.Clock()
 
@@ -53,7 +56,8 @@ while not game_over:
                 color = YELLOW
             elif board[i][j] == 3:
                 color = GREEN
-
+            pygame.draw.rect(display, color,
+                             [i * TILE_SIZE, j * TILE_SIZE, TILE_SIZE, TILE_SIZE])
 
     pygame.draw.rect(display, BLACK,
                      [tractor_horizontal_location, tractor_vertical_location, TRACTOR_WIDTH, TRACTOR_HEIGHT])
