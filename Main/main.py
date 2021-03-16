@@ -1,6 +1,8 @@
 import pygame
-#wersja 1.02
+# wersja 1.02
 from constants import *
+
+from Main.constants import *
 
 pygame.init()
 
@@ -44,13 +46,11 @@ while not game_over:
     pygame.draw.rect(display, BLACK,
                      [tractor_horizontal_location, tractor_vertical_location, TRACTOR_WIDTH, TRACTOR_HEIGHT])
 
-
-
     pygame.display.update()
     clock.tick(FPS)
     horizontal_change = 0
     vertical_change = 0
-#commit test 2
+# commit test 2
 
 pygame.quit()
 quit()
