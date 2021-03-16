@@ -57,7 +57,7 @@ while not game_over:
     horizontal_change = 0
     vertical_change = 0
 #commit test 2
-#check czh działa
+#sprawdź czy działa
 
 pygame.quit()
 quit()
