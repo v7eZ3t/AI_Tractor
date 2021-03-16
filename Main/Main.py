@@ -56,6 +56,7 @@ while not game_over:
     clock.tick(10)
     horizontal_change = 0
     vertical_change = 0
+#commit test
 
 pygame.quit()
 quit()
